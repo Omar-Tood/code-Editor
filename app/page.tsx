@@ -1,15 +1,23 @@
-import { SignedIn, SignedOut, SignIn, SignOutButton, SignUpButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignIn, SignOutButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
      <SignedOut>
-      <SignUpButton/>
+      <SignUpButton>
+        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-4 rounded">
+          Sign Up
+        </button>
+      </SignUpButton>
      </SignedOut>
-
+     <UserButton/>
     <SignedIn>
-      <SignOutButton/>
+      <SignOutButton>
+        <button className="bg-red-500 hover:bg-pink-700 text-white font-bold px-4 rounded">
+          Sign Out
+        </button>
+      </SignOutButton>
     </SignedIn>
     </div>
   );
